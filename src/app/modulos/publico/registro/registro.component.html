@@ -1,0 +1,73 @@
+<section class="background-radial-gradient overflow-hidden">
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5 justify-content-center">
+          <div class="col-lg-6 position-relative">
+              <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+              <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+              <div class="card bg-glass shadow-lg border-0">
+                  <div class="card-body px-5 py-4">
+                      <h3 class="text-center mb-4 fw-bold text-primary">Crear Cuenta</h3>
+                      <form #frmRegistro="ngForm" (submit)="frmRegistro.form.valid && enviarFormulario(frmRegistro)">
+                          <!-- Nombres y Apellidos -->
+                          <div class="row">
+                              <div class="col-md-6 mb-4">
+                                  <div class="form-outline">
+                                      <input type="text" name="nombresUsuario" id="nombresUsuario"
+                                          class="form-control" required #nomUsu="ngModel"
+                                          [(ngModel)]="objRegistro.nombresUsuario"
+                                          [ngClass]="{'is-invalid': frmRegistro.submitted && nomUsu.invalid}" />
+                                      <label class="form-label" for="nombresUsuario">Nombres</label>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 mb-4">
+                                  <div class="form-outline">
+                                      <input type="text" name="apellidosUsuario" id="apellidosUsuario"
+                                          class="form-control" required #apelUsu="ngModel"
+                                          [(ngModel)]="objRegistro.apellidosUsuario"
+                                          [ngClass]="{'is-invalid': frmRegistro.submitted && apelUsu.invalid}" />
+                                      <label class="form-label" for="apellidosUsuario">Apellidos</label>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Email -->
+                          <div class="form-outline mb-4">
+                              <input type="email" name="nombreAcceso" id="nombreAcceso" class="form-control"
+                                  required #nomAce="ngModel" [(ngModel)]="objRegistro.nombreAcceso"
+                                  [ngClass]="{'is-invalid': frmRegistro.submitted && nomAce.invalid}" />
+                              <label class="form-label" for="nombreAcceso">Correo Electrónico</label>
+                          </div>
+
+                          <!-- Contraseña y Confirmación -->
+                          <div class="form-outline mb-4">
+                              <input type="password" name="claveAcceso" id="claveAcceso" class="form-control"
+                                  required #claAcce="ngModel" [(ngModel)]="objRegistro.claveAcceso"
+                                  [ngClass]="{'is-invalid': frmRegistro.submitted && claAcce.invalid}" />
+                              <label class="form-label" for="claveAcceso">Contraseña</label>
+                          </div>
+                          <div class="form-outline mb-4">
+                              <input type="password" name="reClaveAcceso" id="reClaveAcceso" class="form-control"
+                                  required #reCla="ngModel" [(ngModel)]="objRegistro.reClaveAcceso"
+                                  [ngClass]="{'is-invalid': frmRegistro.submitted && reCla.invalid}"
+                                  [pattern]="objRegistro.claveAcceso" />
+                              <label class="form-label" for="reClaveAcceso">Confirmar Contraseña</label>
+                          </div>
+
+                          <!-- Botón de envío -->
+                          <div class="d-flex justify-content-center">
+                              <button type="submit" class="btn btn-primary btn-block fw-bold">Crear Cuenta</button>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="card-footer text-center mt-3">
+                      <p class="text-secondary">
+                          ¿Ya tienes una cuenta?
+                          <a class="text-primary fw-bold" [routerLink]="['/land/signin']">Inicia Sesión</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

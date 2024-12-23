@@ -1,0 +1,54 @@
+.background-radial-gradient {
+  background-color: hsl(218, 41%, 15%);
+  background-image: radial-gradient(650px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%),
+                    radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+}
+
+#radius-shape-1, #radius-shape-2 {
+  background: linear-gradient(45deg, #44006b, #ad1fff);
+  opacity: 0.4;
+}
+
+#radius-shape-1 {
+  height: 260px;
+  width: 260px;
+  top: -50px;
+  left: -130px;
+}
+
+#radius-shape-2 {
+  height: 340px;
+  width: 340px;
+  bottom: -80px;
+  right: -120px;
+}
+
+.card.bg-glass {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  background-color: #4e33d3;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3c2bca;
+}
+
+.form-outline .form-control {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+}
+
+.form-outline .form-label {
+  color: #3a0ca3;
+  font-weight: 500;
+}

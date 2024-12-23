@@ -1,0 +1,369 @@
+#**********************************#
+1. Crear proyecto
+ng new taller07_modulos --standalone=false
+#**********************************#
+2. Instalacion librerias
+npm i bootstrap
+npm i @fortawesome/fontawesome-free
+npm i ngx-bootstrap
+npm i ngx-toastr
+npm i ngx-pagination
+npm i jssha
+npm i jwt-decode
+
+**********************
+npm i ngx<dl class="row">
+    <dt class="col-sm-3">Term</dt>
+    <dd class="col-sm-9">definition</dd>
+    <dt class="col-sm-3">Term</dt>
+    <dd class="col-sm-9">definition</dd>
+    <dt class="col-sm-3 text-truncate">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </dt>
+    <dd class="col-sm-9">Term</dd>
+    <dt class="col-sm-3">Nesting</dt>
+    <dd class="col-sm-9">
+        <dl class="row">
+            <dt class="col-sm-4">Nested title</dt>
+            <dd class="col-sm-8">Nested definition</dd>
+        </dl>
+    </dd>
+</dl>
+
+#**********************************#
+3. Incluir los archivos css y js en angular.json
+
+
+ "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              "src/assets"
+            ],
+
+            "styles": [
+              "src/styles.css",
+              "node_modeules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modeules/@fortawesone/fontawesome-free/css/all.min.css",
+             "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/ngx-toastr/toastr.css"
+
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+
+#**********************************#
+4. Cambiar el puerto de desarrollo y produccion angular.jsons
+ "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "taller04__modelos:build:production",
+              "port": 8095
+            },
+            "development": {
+              "buildTarget": "taller04__modelos:build:development",
+              "port": 8094
+
+            }
+          },
+#**********************************#
+5. Limpiar la plantilla del componente principal (app.component.html)
+#**********************************#
+6. Crear componentes
+
+
+ng g m modulos/publico
+ng g m modulos/publico/publico-routing --flat --module=publico
+
+
+
+ng g c modulos/publico/acceso --skip-tests
+ng g c modulos/publico/registro --skip-tests
+ng g c modulos/publico/error --skip-tests
+#**********************************#
+7.creaciom del modulo comartido y va tener componentes
+#**********************************#
+ng g c modulos/compartido --skip-tests
+
+ng g c modulos/compartido/spinners --skip-tests
+ng g c modulos/compartido/spinners --skip-tests
+
+
+
+
+
+
+
+#**********************************#
+8. creacion modulo contenedor  y componentes
+#**********************************#
+ng g m modulos/contenedor
+
+ng g c modulos/contenedor/cuerpoLand   --skip-tests
+ng g c modulos/contenedor/cabaceraLand   --skip-tests
+
+ng g c modulos/contenedor/dash/cuerpoDash --skip-tests
+ng g c modulos/contenedor/dash/cabeceraDash --skip-tests
+ng g c modulos/contenedor/dash/barraLateralDash --skip-tests
+ng g c modulos/contenedor/dash/pieDash --skip-tests
+
+
+
+
+
+
+#**********************************#
+ng g c components/contenedor/cabecera --skip-tests
+ng g c components/contenedor/inicio --skip-tests
+ng g c components/contenedor/error --skip-tests
+ng g c components/contenedor/contacto --skip-tests
+ng g c components/contenedor/acerca-de --skip-tests
+
+
+ng g c components/colombia/detalle --skip-tests
+
+
+
+
+#**********************************#
+
+9.crecacion modulo creado y componentes
+#**********************************#
+ng g m modulos/privado/control
+ng g m modulos/privado/control/control-routing --flat --module=control
+
+
+ng g c modulos/privado/control/errorInterno --skip-tests
+ng g c modulos/privado/control/bienvenida --skip-tests
+
+ng g m modulos/privado/departamento
+ng g m modulos/privado/departamento/departamento-routing --flat --module=departamento
+
+
+ng g c modulos/privado/departamento/crearDepartamento  --skip-tests
+ng g c modulos/privado/departamento/administrarDepartamento  --skip-tests
+ng g c modulos/privado/departamento/actualizarDepartamento  --skip-tests
+ng g c modulos/privado/departamento/listarDepartamento  --skip-tests
+
+
+
+
+
+
+
+
+
+
+
+Componentes del modelo
+#**********************************#
+5. Limpiar la plantilla del componente principal (app.component.html)
+#**********************************#
+6. Crear componentes de modelo
+#**********************************#
+ng g c components/casa/listarCasa --skip-tests
+ng g c components/casa/crearCasa --skip-tests
+ng g c components/casa/administrarCasa --skip-tests
+ng g c components/casa/actualizarCasa --skip-tests
+
+
+
+
+
+
+#0*******************
+ BrowserAnimationsModule
+
+
+
+*********************************************
+8. Contenido plantilla componente cabecera (cabecera, component)
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <!--ACA VA MI IMAGEN-->
+
+
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Acerca De</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Operaciones
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Listar</a></li>
+            <li><a class="dropdown-item" href="#">Registrar </a></li>
+            </ul>
+        </li>
+        </ul>
+        <div class="navbar-nav">
+          <span class="nav-item">
+            <a href="#" class="nav-link">Inicio Sesion</a>
+          </span>
+        </div>
+    </div>
+  </div>
+</nav>
+#**********************************#
+8. Agregar selector de cabecera en el componente principaal(app.component.html)
+<main><app-cabecera></app-cabecera></main>
+#**********************************#
+#**********************************#
+ ng g enum utilities/mensaje
+#**********************************#
+#**********************************#
+npm install ngx-toastr --save
+#**********************************#
+ng g enum mocks/productosMock
+
+ng g class models/Productos --skip-tests
+#**********************************#
+#**********************************#
+#**********************************#
+#**********************************#
+#**********************************#
+
+
+
+ {path: 'home', component: InicioComponent},
+  {path: 'contact', component: ContactoComponent},
+  {path: 'aboutMe', component: AcercaDeComponent},
+
+{path:"/",redirectTo: "/home",pathMatch:"full"},
+{path: "**", component: ErrorComponent}
+
+
+
+11. carga celetor  router
+<main><app-cabecera></app-cabecera>
+  <div class="mb-3">
+    <router-outlet>
+
+    </router-outlet>
+  </div>
+</main>
+12.contemido plantillaaa inicio
+****************************************
+13. creacion de modelo
+******************************************
+ng g class models/Pais --skip-tests
+ng g class models/Region --skip-tests
+ng g class models/Departamento --skip-tests
+ng g class models/Ciudad --skip-tests
+
+14.generacion domino
+******************************************
+ng g enum utilities/dominos/urls
+***************************************************
+15.creacion de los seervico
+ng g s servicios/api/colombia --skip-tests
+
+
+ ng g enum utilities/observadores/tipoAny
+
+ ng g c components/colombia/departamento --skip-tests
+ ng g c components/colombia/regiones --skip-tests
+
+ ng g c utilities/plantilla/spiner
+
+
+ ng g c utilities/plantilla/spiner
+ ng c s servicios/api/colombia --skip-tests
+
+   "moduleResolution": "node",
+
+
+
+   ####################3333
+8. defirnir la  router principal
+
+ng g enum utilities/routes/rutasLand
+ng g enum utilities/routes/rutasDash
+
+################################3
+9. Contenido archivos rutasLand.tests
+
+import { Routes } from "@angular/router";
+import { ErrorComponent } from "../../modulos/publico/error/error.component";
+
+export const RUTAS_lANDSCAPE: Routes =[
+    {
+        path: 'land',
+        loadChildren: () => import('../../modulos/publico/publico.module').then(m => m.PublicoModule)
+    },
+    {
+    path: '',redirectTo:  'land', pathMatch:"full"},
+    {path: '**',component:ErrorComponent },
+
+]
+
+###############################################3
+10. ruta navigation mdoulo publico
+
+src/app/modulos/publico/acceso src/app/modulos/publico/error src/app/modulos/publico/registro src/app/modulos/publico/publico-routing.module.ts src/app/modulos/publico/publico.module.ts
+####################################
+
+##################################3333
+11.
+##############################################################333
+12.cargar rutas modulo control
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Routes } from '@angular/router';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { ErrorInternoComponent } from './error-interno/error-interno.component';
+
+const rutas:Routes=[
+  { path: 'board', component: BienvenidaComponent },
+
+
+  // rutas obligatorias
+  {path:'',redirectTo:'board',pathMatch:'full'},
+  {path:'**', component: ErrorInternoComponent}
+
+
+
+
+]
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
+})
+export class ControlRoutingModule { }
+
+
+
+####################################################
+13. se carga  ruteo land y rotueo daash
+
+
+
+
+
+
+
+ng g c modelos/usuarioRegistro --skip-tests
+ng g enum utilities/dominios/uris
+ng g s services/api/registro --skip-tests
+ng g enum utilities/observadores/tipoAny
